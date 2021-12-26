@@ -1,15 +1,17 @@
-import './App.css';
-import data from './data.json';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+// import data from './data.json';
+import Mercury from './pages/Mercury';
 
-function App() {
-    console.log(data);
+const App = () => {
     return (
         <>
-            {data.map((planet, idx) => (
-                <div key={idx}>{planet.name}</div>
-            ))}
+            <Routes>
+                <Route path="/" element={<Mercury />}></Route>
+                <Route path="mercury" element={<Mercury />}></Route>
+            </Routes>
         </>
     );
-}
+};
 
 export default App;

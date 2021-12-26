@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Colors */
+    --color-white: #fff;
+    --color-black: #070724;
+    --color-darK-gray: #38384f;
+    --color-gray: #838391;
+    --color-yellow: #eda249;
+    --color-purple: #6f2ed6;
+    --color-orange-100: #d14c32;
+    --color-orange-200: #d83a34;
+    --color-orange-300: #cd5120;
+    --color-green: #1ec2a4;
+    --color-greenish-blue: #419ebb;
+    --color-blue: #2d68f0;
+
+    /* Fonts */
+    --font-Antonio: 'Antonio', sans-serif;
+    --font-Spartan: 'Spartan', sans-serif;
+
+    /* Typography */
+    --h1-Typography: 5rem/6.4375rem var(--font-Antonio);
+    --h2-Typography: 2.5rem/3.25rem var(--font-Antonio);
+    --h3-Typography: 0.75rem/1.5625rem var(--font-Spartan);
+    --h4-Typography: 0.6875rem/1.5625rem var(--font-Spartan);
+    --p-Typography: 0.875rem/1.5625rem var(--font-Spartan);
+
+    /* letter spacings */
+    --desktop-letter-spacing-1: -1.5px;
+    --desktop-letter-spacing-2: 2.6px;
+    --desktop-letter-spacing-3: 1px;
+}
+
+body {
+    min-height: 100vh;
+    color: var(--color-white);
+    background: var(--color-black) url(./assets/background-stars.svg) no-repeat center center/cover;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Typography */
+h1 {
+    font: var(--h1-Typography);
+}
+h2 {
+    font: var(--h2-Typography);
+    letter-spacing: var(--desktop-letter-spacing-1);
+}
+h3 {
+    font: var(--h3-Typography);
+    letter-spacing: var(--desktop-letter-spacing-2);
+}
+h4 {
+    font: var(--h4-Typography);
+    letter-spacing: var(--desktop-letter-spacing-3);
+}
+p {
+    font: var(--p-Typography);
+}
