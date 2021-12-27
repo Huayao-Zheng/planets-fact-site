@@ -1,16 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@400;700&display=swap');
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 :root {
     /* Colors */
-    --color-white: #fff;
+    --color-white: 0, 0%, 100%;
     --color-black: #070724;
     --color-darK-gray: #38384f;
     --color-gray: #838391;
@@ -23,6 +15,16 @@
     --color-greenish-blue: #419ebb;
     --color-blue: #2d68f0;
 
+    /* planet-colors */
+    --mercury: var(--color-greenish-blue);
+    --venus: var(--color-yellow);
+    --earth: var(--color-purple);
+    --mars: var(--color-orange-100);
+    --jupiter: var(--color-orange-200);
+    --saturn: var(--color-orange-300);
+    --uranus: var(--color-green);
+    --neptune: var(--color-blue);
+
     /* Fonts */
     --font-Antonio: 'Antonio', sans-serif;
     --font-Spartan: 'Spartan', sans-serif;
@@ -30,19 +32,29 @@
     /* Typography */
     --h1-Typography: 5rem/6.4375rem var(--font-Antonio);
     --h2-Typography: 2.5rem/3.25rem var(--font-Antonio);
-    --h3-Typography: 0.75rem/1.5625rem var(--font-Spartan);
-    --h4-Typography: 0.6875rem/1.5625rem var(--font-Spartan);
     --p-Typography: 0.875rem/1.5625rem var(--font-Spartan);
+    --Typography-100: 0.6875rem/1.5625rem var(--font-Spartan);
+    --Typography-200: 0.75rem/1.5625rem var(--font-Spartan);
 
     /* letter spacings */
     --desktop-letter-spacing-1: -1.5px;
-    --desktop-letter-spacing-2: 2.6px;
-    --desktop-letter-spacing-3: 1px;
+    --desktop-letter-spacing-2: 1px;
+    --desktop-letter-spacing-3: 2.6px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: hsl(var(--color-white));
+    font-family: var(--font-Spartan);
 }
 
 body {
     min-height: 100vh;
-    color: var(--color-white);
+    color: hsl(var(--color-white));
     background: var(--color-black) url(./assets/background-stars.svg) no-repeat center center/cover;
 }
 
@@ -54,21 +66,12 @@ a {
     text-decoration: none;
 }
 
-/* Typography */
 h1 {
     font: var(--h1-Typography);
 }
 h2 {
     font: var(--h2-Typography);
     letter-spacing: var(--desktop-letter-spacing-1);
-}
-h3 {
-    font: var(--h3-Typography);
-    letter-spacing: var(--desktop-letter-spacing-2);
-}
-h4 {
-    font: var(--h4-Typography);
-    letter-spacing: var(--desktop-letter-spacing-3);
 }
 p {
     font: var(--p-Typography);

@@ -1,7 +1,12 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
 
 const Mercury = () => {
-    return <div>this is Mercury page</div>;
+    return (
+        <>
+            <Navbar />
+        </>
+    );
 };
 
 export default Mercury;
