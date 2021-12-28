@@ -1,28 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Navbar.style.css';
 import { Link } from 'react-router-dom';
 import planets from '../data.json';
+import Chevron from '../assets/icon-chevron.svg';
+import Hamburger from '../assets/icon-hamburger.svg';
 
 const Navbar = () => {
+    const [toggleMenu, setToggleMenu] = useState(false);
+
+    const renderPlanetsLinks = () =>
+        planets.map((planet, idx) => {
+            const planetName = planet.name.toLowerCase();
+            const planetThemeColor = { background: `var(--${planetName})` };
+
+            return (
+                <Link key={idx} to={`/${planetName}`}>
+                    <span className="hover-line" style={planetThemeColor} />
+
+                    <span className="colored-planet-cycle" style={planetThemeColor} />
+
+                    {planet.name}
+
+                    <img className="chevron-icon" src={Chevron} alt="chevron icon" />
+                </Link>
+            );
+        });
+
     return (
         <header>
             <Link to="/">
                 <h2>THE PLANETS</h2>
             </Link>
 
-            <ul className="nav-bar">
-                {planets.map((planet, idx) => (
-                    <li key={idx}>
-                        <Link to={`/${planet.name.toLowerCase()}`}>{planet.name}</Link>
-                    </li>
-                ))}
-            </ul>
+            <ul className={toggleMenu ? 'nav-bar active' : 'nav-bar'}>{renderPlanetsLinks()}</ul>
 
-            <svg className="hamburger" xmlns="http://www.w3.org/2000/svg" width="24" height="17">
-                <g fill="#FFF" fillRule="evenodd">
-                    <path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z" />
-                </g>
-            </svg>
+            <img
+                onClick={() => setToggleMenu(!toggleMenu)}
+                className={toggleMenu ? 'hamburger active' : 'hamburger'}
+                src={Hamburger}
+                alt="hamburger icon"
+            />
         </header>
     );
 };
