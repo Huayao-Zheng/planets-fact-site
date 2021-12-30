@@ -43,6 +43,10 @@ a:hover .hover-line {
     transform: translateY(-29px) scale(1);
 }
 
+.chevron-icon {
+    display: none;
+}
+
 .hamburger {
     display: none;
     cursor: pointer;
@@ -112,6 +116,7 @@ a:hover .hover-line {
     }
 
     .chevron-icon {
+        display: block;
         position: absolute;
         top: 0;
         right: 0;

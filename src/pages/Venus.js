@@ -2,13 +2,13 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import PlanetMain from '../components/PlanetMain';
 
-const Mercury = () => {
+const Venus = () => {
     return (
-        <>
+        <div>
             <Navbar />
             <PlanetMain />
-        </>
+        </div>
     );
 };
 
-export default Mercury;
+export default Venus;
